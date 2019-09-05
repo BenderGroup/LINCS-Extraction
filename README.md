@@ -20,7 +20,7 @@ GSE70138_Broad_LINCS_sig_info_2017-03-06.txt.gz
 
 ### Extract_And_TAS.py options:
 
-```python
+```
 Options:
   -h, --help            show this help message and exit
   --cell_line=CELL_LINE
