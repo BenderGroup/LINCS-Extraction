@@ -32,3 +32,19 @@ Options:
   --ncores=CORES        Number of cores (default 1)
  ```
   
+ ### Extracted Data
+ 1. Compounds with replicates: 
+Consensus signatures are saved in the full matrix of all compounds in conditions specified (e.g A375_24 h_10uM.txt) where headers are genes and rows are compounds, in the "Consensus_Signatures" folder.
+Individual replicates are also extracted; these are saved as a matrix per compound (e.g. compoundname_A375_24 h_10uM.txt) where rows are genes and headers are compound replicate ID, in the "All_Replicates" folder.
+
+2. Compounds with no replicates:
+Individual signatures are saved in the full matrix of all compounds in conditions specified (as above) but in the "Compounds_With_No_Replicates" folder.
+
+3. TAS scores for all compounds with replicates
+TAS score + SS and CC scores for all compounds with replicates in conditions specified (e.g. A375_24 h_10uM_TAS.txt) in TAS_Scores folder.
+
+### Future functionality
+1. Ability to provide more than one cell line, time point, dose etc. as an option (for now automation.sh script allows iteration, but each extraction is a separate task i.e. not as a loop within the Python script)
+2. Command line option to choose gene subset (LM, BING, All - for now just LM but this can manually be edited in the Python script)
+3. Command line option for TAS score calculation
+ 
