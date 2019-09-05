@@ -2,7 +2,7 @@
  Extraction of LINCS L1000 data
 
 ### Step 1: Create folders
-Create folders called "data", "Consensus_Signatures", "TAS_Scores", "Compounds_With_No_Replicates", "All_Replicates" in your working directory. Save Python script (and optionally automation.sh script) in your working directory.
+Create folders called "data", "Consensus_Signatures", "TAS_Scores", "Compounds_With_No_Replicates", "All_Replicates" in your working directory
 
 ### Step 2: Extract LINCS L1000 files from Phase 1 and Phase 2 from Gene Expression Omnibus (GEO) and save them in "data" folder
 For Phase 1 visit:
@@ -49,4 +49,15 @@ TAS score + SS and CC scores for all compounds with replicates in conditions spe
 1. Ability to provide more than one cell line, time point, dose etc. as an option (for now automation.sh script allows iteration, but each extraction is a separate task i.e. not as a loop within the Python script)
 2. Command line option to choose gene subset (LM, BING, All - for now just LM but this can manually be edited in the Python script)
 3. Command line option for TAS score calculation
- 
+
+
+
+                           
+                                    |LINCS|
+                                    /  |  \
+                                   /   |   \
+                                  /    |    \
+                                 /     |     \
+    |Compounds_With_No_Replicates|   |DATA|  |Consensus_Signatures|
+                                    
+                           
