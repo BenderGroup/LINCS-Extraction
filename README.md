@@ -19,4 +19,16 @@ GSE70138_Broad_LINCS_sig_info_2017-03-06.txt.gz
 ### Step 3: Run the Extract_And_TAS.py
 
 ### Extract_And_TAS.py options:
---cell_line Specify cell line of interest for extraction
+
+'''
+Options:
+  -h, --help            show this help message and exit
+  --cell_line=CELL_LINE
+                        Cell line for extraction (default MCF7)
+  --pert_time=PERTURBATION_TIME
+                        Perturbation time for extraction (hours) (default 24h)
+  --pert_dose=PERTURBATION_DOSE
+                        Perturbation dose for extraction (uM) (default 10)
+  --ncores=CORES        Number of cores (default 1)
+  '''
+  
