@@ -48,8 +48,8 @@ Perturbation_Dose=Perturbation_Dose+" "+"µM"
 #Specify directories for files
 data_dir = 'data/'
 
-ds_path_Phase1=data_dir+"GSE92742_Broad_LINCS_Level5_COMPZ.MODZ_n473647x12328.gctx"
-ds_path_Phase2=data_dir+"GSE70138_Broad_LINCS_Level5_COMPZ_n118050x12328_2017-03-06.gctx"
+ds_path_Phase1=data_dir+"GSE92742_Broad_LINCS_Level5_*.gctx"
+ds_path_Phase2=data_dir+"GSE70138_Broad_LINCS_Level5_*.gctx"
 gene_info=pd.read_table(data_dir+"GSE92742_Broad_LINCS_gene_info.txt", sep='\t')
 sig_info_1=pd.read_table(data_dir+"GSE92742_Broad_LINCS_sig_info.txt", sep="\t")
 sig_info_2=pd.read_table(data_dir+"GSE70138_Broad_LINCS_sig_info.txt", sep="\t")
