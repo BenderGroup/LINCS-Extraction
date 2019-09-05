@@ -20,7 +20,7 @@ GSE70138_Broad_LINCS_sig_info_2017-03-06.txt.gz
 
 ### Extract_And_TAS.py options:
 
-'''
+```python
 Options:
   -h, --help            show this help message and exit
   --cell_line=CELL_LINE
@@ -30,5 +30,5 @@ Options:
   --pert_dose=PERTURBATION_DOSE
                         Perturbation dose for extraction (uM) (default 10)
   --ncores=CORES        Number of cores (default 1)
-  '''
+ ```
   
