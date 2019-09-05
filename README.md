@@ -1,5 +1,6 @@
 # LINCS Extraction
- Extraction of LINCS L1000 data
+ Extraction of LINCS L1000 data.
+ Authors: Maria-Anna Trapotsi (mat64@cam.ac.uk) and Layla Hosseini-Gerami (lh605@cam.ac.uk)
 
 ### Step 1: Create folders
 Create folders called "data", "Consensus_Signatures", "TAS_Scores", "Compounds_With_No_Replicates", "All_Replicates" in your working directory
