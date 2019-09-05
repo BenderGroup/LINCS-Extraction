@@ -1,7 +1,9 @@
 # LINCS Extraction
  Extraction of LINCS L1000 data
 
-### Step 1: Create a folder called "data" in your working directory
+### Step 1: Create folders
+Create folders called "data", "Consensus_Signatures", "TAS_Scores", "Compounds_With_No_Replicates", "All_Replicates" in your working directory
+
 ### Step 2: Extract LINCS L1000 files from Phase 1 and Phase 2 from Gene Expression Omnibus (GEO) and save them in "data" folder
 For Phase 1 visit:
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92742
