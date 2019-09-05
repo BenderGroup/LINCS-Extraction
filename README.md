@@ -53,11 +53,11 @@ TAS score + SS and CC scores for all compounds with replicates in conditions spe
 
 
                            
-                                    |LINCS|
-                                    /  |  \
-                                   /   |   \
-                                  /    |    \
-                                 /     |     \
-    |Compounds_With_No_Replicates|   |DATA|  |Consensus_Signatures|
-                                    
+                                           |LINCS|
+                                           /  |  \
+                                          /   |   \
+                                         /    |    \
+                                        /     |     \
+           |Compounds_With_No_Replicates|   |DATA|  |Consensus_Signatures|
+                                           
                            
