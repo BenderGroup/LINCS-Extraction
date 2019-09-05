@@ -19,4 +19,4 @@ GSE70138_Broad_LINCS_sig_info_2017-03-06.txt.gz
 ### Step 3: Run the Extract_And_TAS.py
 
 ### Extract_And_TAS.py options:
-
+--cell_line Specify cell line of interest for extraction
