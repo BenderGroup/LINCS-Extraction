@@ -46,11 +46,7 @@ Perturbation_Dose=Perturbation_Dose+" "+"µM"
 
 
 #Specify directories for files
-data_dir = '/scratch/lh605/ucc-fs-nethome/lincs_replicates_investigation/'
-#results_dir = '/scratch/lh605/ucc-fs-nethome/lincs_replicates_investigation/reproducibility_scripts/results_tables/'
-#mat_dir = '/scratch/lh605/ucc-fs-nethome/lincs_replicates_investigation/reproducibility_scripts/rep_data_matrix/'
-cwd = '/scratch/lh605/ucc-fs-nethome/lincs_replicates_investigation/TAS_Score/'
-compounds_and_replicates_dir = '/scratch/lh605/ucc-fs-nethome/lincs_replicates_investigation/reproducibility_scripts/'
+data_dir = 'data/'
 
 ds_path_Phase1=data_dir+"GSE92742_Broad_LINCS_Level5_COMPZ.MODZ_n473647x12328.gctx"
 ds_path_Phase2=data_dir+"GSE70138_Broad_LINCS_Level5_COMPZ_n118050x12328_2017-03-06.gctx"
@@ -68,17 +64,11 @@ compounds_phase_2 = compounds_phase_2['pert_iname'].tolist()
 
 compounds = list(set(compounds_phase_1) | set(compounds_phase_2))
 compounds = [str(i) for i in compounds]
-#compounds = compounds[0:100]
+#compounds = compounds[0:100] subset compounds to test the code
 
-
-#Read file with compound names and number of replicates
-#replicates=pd.read_table(compounds_and_replicates_dir+'LINCS_'+'all_'+Cell_line+'_'+Perturbation_Time+'_'+Perturbation_Dose+'.txt')
-#replicates
-#compounds=list(replicates['Compound_id'])
-#print(str(len(compounds))+" compounds with > 3 replicates in "+str(Cell_line)+" "+str(Perturbation_Time)+" "+str(Perturbation_Dose))
-
-
+#Initialise empty dataframe
 empty_df=pd.DataFrame()
+
 #Empty df of all the gene_IDs and compounds
 row_names_lm = list((gene_info['pr_gene_id'][gene_info["pr_is_lm"] == 1]).sort_values())
 column_names_lm = list(compounds)
@@ -103,8 +93,6 @@ no_rep_mat.write('\t'.join(map(str,headers)) + '\n')
 
 consensus_mat = open('Consensus_Signatures/'+'LINCS_'+'all_'+Cell_line+'_'+Perturbation_Time+'_'+Perturbation_Dose+'_'+'Consensus'+'.txt','w+')
 consensus_mat.write('\t'.join(map(str,headers)) + '\n')
-#consensus_mat.close()
-#consensus_mat = open('Consensus_Signatures/'+'LINCS_'+'all_'+Cell_line+'_'+Perturbation_Time+'_'+Perturbation_Dose+'_'+'Consensus'+'.txt','a')
 
 #Define function for extracting data and calculating TAS
 
@@ -241,7 +229,7 @@ def CalculateTAS(compound):
         
          
 
-results = Parallel(n_jobs=cores,backend="multiprocessing")(delayed(CalculateTAS)(compound) for compound in compounds)#backend="threading"?
+results = Parallel(n_jobs=cores,backend="multiprocessing")(delayed(CalculateTAS)(compound) for compound in compounds)
 
 for compound in results:
     
@@ -249,19 +237,13 @@ for compound in results:
     consensus = compound[1]
     singlesig = compound[2]
     
-    if len(stat) == 0:
-        hello = "POO"
-    else:
+    if len(stat)!=0:
         GE_results.write('\t'.join(map(str,stat)) + '\n')
 
-    if len(consensus) == 0:
-        hello = "POO"
-    else:
+    if len(consensus)!=0:
         consensus_mat.write('\t'.join(map(str,consensus)) + '\n')
 
-    if len(singlesig) == 0:
-        hello = "POO"
-    else:
+    if len(singlesig)!=0
         no_rep_mat.write('\t'.join(map(str,singlesig)) + '\n')
         
 
