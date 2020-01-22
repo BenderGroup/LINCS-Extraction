@@ -8,7 +8,7 @@ for i in "${cell_lines[@]}"; do
 			print $i
 			print $j
 			print $k
-		       	python TAS_Score_Test.py --ncores=20 "$i" "$j" "$k" 
+		       	python Extract_And_TAS.py --ncores=20 "$i" "$j" "$k" 
 			wait
 		done
 	done
