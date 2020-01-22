@@ -243,7 +243,7 @@ for compound in results:
     if len(consensus)!=0:
         consensus_mat.write('\t'.join(map(str,consensus)) + '\n')
 
-    if len(singlesig)!=0
+    if len(singlesig)!=0:
         no_rep_mat.write('\t'.join(map(str,singlesig)) + '\n')
         
 
