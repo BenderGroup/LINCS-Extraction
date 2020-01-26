@@ -54,7 +54,7 @@ Options:
 I.e. if you want to extract all data from VCAP measured in 24 hours and 5 uM, using 5 cores of compute power you would type:
 
 ```
-python Extract_And_Tas.py --cell_line=VCAP --pert_time=24 pert_dose=5 --ncores=5
+$ python Extract_And_Tas.py --cell_line=VCAP --pert_time=24 pert_dose=5 --ncores=5
 ```
 
 Please note you may have to change the filepaths in the code to match with the filenames you have extracted in data/ folder, as filenames are periodically updated.
@@ -64,8 +64,8 @@ This script will extract LANDMARK GENES ONLY but you can modify a couple of line
 automation.sh will enable you to extract data in multiple conditions, by providing a few parameters which will be looped over in every combination - you may edit this file to keep only cell lines etc. you care about.
 
 ```
-chmod +x automation.sh # make it executable
-./automation.sh
+$ chmod +x automation.sh # make it executable
+$ ./automation.sh
 ```
 
  ### Extracted Data
