@@ -3,6 +3,8 @@
  
  [A Next Generation Connectivity Map: L1000 platform and the first 1,000,000 profiles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5990023/)
  
+ Repo image from [The Library of Integrated Network-Based Cellular Signatures NIH Program: System-Level Cataloging of Human Cells Response to Perturbations.] (https://www.ncbi.nlm.nih.gov/pubmed/29199020)
+ 
  Authors: Maria-Anna Trapotsi (mat64@cam.ac.uk) and Layla Hosseini-Gerami (lh605@cam.ac.uk)
 
 ### Step 1: Create folders
