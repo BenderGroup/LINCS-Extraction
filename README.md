@@ -1,5 +1,8 @@
 # LINCS Extraction
  Extraction of LINCS L1000 data.
+ 
+ [A Next Generation Connectivity Map: L1000 platform and the first 1,000,000 profiles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5990023/)
+ 
  Authors: Maria-Anna Trapotsi (mat64@cam.ac.uk) and Layla Hosseini-Gerami (lh605@cam.ac.uk)
 
 ### Step 1: Create folders
@@ -71,6 +74,9 @@ $ ./automation.sh
  ### Extracted Data
  1. Compounds with replicates: 
 Consensus signatures are saved in the full matrix of all compounds in conditions specified (e.g A375_24 h_10uM.txt) where headers are genes and rows are compounds, in the "Consensus_Signatures" folder.
+
+Consensus signatures are computed for biological replicates in the same way that the original paper details for technical replicates.
+
 Individual replicates are also extracted; these are saved as a matrix per compound (e.g. compoundname_A375_24 h_10uM.txt) where rows are genes and headers are compound replicate ID, in the "All_Replicates" folder.
 
 2. Compounds with no replicates:
@@ -79,7 +85,9 @@ Individual signatures are saved in the full matrix of all compounds in condition
 3. TAS scores for all compounds with replicates
 TAS score + SS and CC scores for all compounds with replicates in conditions specified (e.g. A375_24 h_10uM_TAS.txt) in TAS_Scores folder.
 
-!!!If you just want a matrix of gene expression data then you will need to combine the matrix in Consensus_Signatures and Compounds_With_No_Replicates for your condition of interest (simple Python concat function_!!!
+TAS scores are computed for biological replicates in the same way that the original paper details for technical replicates.
+
+!!!If you just want a matrix of gene expression data then you will need to combine the matrix in Consensus_Signatures and Compounds_With_No_Replicates for your condition of interest (simple Python concat function)!!!
 
 ### Future functionality
 1. Ability to provide more than one cell line, time point, dose etc. as an option (for now automation.sh script allows iteration, but each extraction is a separate task i.e. not as a loop within the Python script)
