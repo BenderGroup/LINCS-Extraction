@@ -7,6 +7,15 @@
  
  Authors: Maria-Anna Trapotsi (mat64@cam.ac.uk) and Layla Hosseini-Gerami (lh605@cam.ac.uk)
 
+Before you start, make sure you have the following packages installed. We recommend you create a Conda environment for this purpose.
+
+* pandas
+* numpy
+* cmapPy
+* h5py
+* scipy
+* joblib
+
 ### Step 1: Create folders
 Create folders called "data", "Consensus_Signatures", "TAS_Scores", "Compounds_With_No_Replicates", "All_Replicates" in your working directory
 
@@ -64,7 +73,7 @@ $ python Extract_And_Tas.py --cell_line=VCAP --pert_time=24 pert_dose=5 --ncores
 
 Please note you may have to change the filepaths in the code to match with the filenames you have extracted in data/ folder, as filenames are periodically updated.
  
-This script will extract LANDMARK GENES ONLY but you can modify a couple of lines in the code to extract best inferred (BING) or all genes also. Please get in touch if you need help with this.
+**This script will extract LANDMARK GENES ONLY but you can modify a couple of lines in the code to extract best inferred (BING) or all genes also. Please get in touch if you need help with this.**
   
 automation.sh will enable you to extract data in multiple conditions, by providing a few parameters which will be looped over in every combination - you may edit this file to keep only cell lines etc. you care about.
 
@@ -89,7 +98,7 @@ TAS score + SS and CC scores for all compounds with replicates in conditions spe
 
 TAS scores are computed for biological replicates in the same way that the original paper details for technical replicates.
 
-!!!If you just want a matrix of gene expression data then you will need to combine the matrix in Consensus_Signatures and Compounds_With_No_Replicates for your condition of interest (simple Python concat function)!!!
+**!!!If you just want a matrix of gene expression data then you will need to combine the matrix in Consensus_Signatures and Compounds_With_No_Replicates for your condition of interest (simple Python concat function)!!!**
 
 ### Future functionality
 1. Ability to provide more than one cell line, time point, dose etc. as an option (for now automation.sh script allows iteration, but each extraction is a separate task i.e. not as a loop within the Python script)
