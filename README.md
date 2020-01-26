@@ -14,6 +14,7 @@ Working Directory/
 │   ├── GSE70138_Broad_LINCS_Level5_COMPZ_n118050x12328_2017-03-06.gctx.gz
 │   └── GSE70138_Broad_LINCS_sig_info_2017-03-06.txt.gz
 ├── Consensus_Signatures/
+├── TAS_Scores/
 ├── Compounds_With_No_Replicates/
 ├── All_Replicates/
 ├── automation.sh
@@ -44,12 +45,29 @@ Options:
   --cell_line=CELL_LINE
                         Cell line for extraction (default MCF7)
   --pert_time=PERTURBATION_TIME
-                        Perturbation time for extraction (hours) (default 24h)
+                        Perturbation time for extraction (hours) (default 24)
   --pert_dose=PERTURBATION_DOSE
                         Perturbation dose for extraction (uM) (default 10)
   --ncores=CORES        Number of cores (default 1)
  ```
+ 
+I.e. if you want to extract all data from VCAP measured in 24 hours and 5 uM, using 5 cores of compute power you would type:
+
+```
+python Extract_And_Tas.py --cell_line=VCAP --pert_time=24 pert_dose=5 --ncores=5
+```
+
+Please note you may have to change the filepaths in the code to match with the filenames you have extracted in data/ folder, as filenames are periodically updated.
+ 
+This script will extract LANDMARK GENES ONLY but you can modify a couple of lines in the code to extract best inferred (BING) or all genes also. Please get in touch if you need help with this.
   
+automation.sh will enable you to extract data in multiple conditions, by providing a few parameters which will be looped over in every combination - you may edit this file to keep only cell lines etc. you care about.
+
+```
+chmod +x automation.sh # make it executable
+./automation.sh
+```
+
  ### Extracted Data
  1. Compounds with replicates: 
 Consensus signatures are saved in the full matrix of all compounds in conditions specified (e.g A375_24 h_10uM.txt) where headers are genes and rows are compounds, in the "Consensus_Signatures" folder.
@@ -61,19 +79,16 @@ Individual signatures are saved in the full matrix of all compounds in condition
 3. TAS scores for all compounds with replicates
 TAS score + SS and CC scores for all compounds with replicates in conditions specified (e.g. A375_24 h_10uM_TAS.txt) in TAS_Scores folder.
 
+!!!If you just want a matrix of gene expression data then you will need to combine the matrix in Consensus_Signatures and Compounds_With_No_Replicates for your condition of interest (simple Python concat function_!!!
+
 ### Future functionality
 1. Ability to provide more than one cell line, time point, dose etc. as an option (for now automation.sh script allows iteration, but each extraction is a separate task i.e. not as a loop within the Python script)
 2. Command line option to choose gene subset (LM, BING, All - for now just LM but this can manually be edited in the Python script)
-3. Command line option for TAS score calculation
+3. Command line option for TAS score calculation or not
 
 
 
                            
-                                           |LINCS|
-                                           /  |  \
-                                          /   |   \
-                                         /    |    \
-                                        /     |     \
-           |Compounds_With_No_Replicates|   |DATA|  |Consensus_Signatures|
+                             
                                            
                            
